@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #ff9900; /* Cor de manga madura */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+nav {
+    background-color: #38761d; /* Cor de folha/verde */
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #5b9b3e;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+main h2 {
+    color: #cc6600;
+    margin-bottom: 30px;
+}
+
+.produto {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 30%; /* Ajuste para exibir 3 por linha */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    margin: 10px;
+    vertical-align: top;
+}
+
+.produto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.produto h3 {
+    color: #ff9900;
+}
+
+.preco {
+    font-size: 1.2em;
+    color: #38761d; /* Destaque para o preço */
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #cc5500;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Responsividade básica para telas menores */
+@media (max-width: 768px) {
+    .produto {
+        width: 90%; /* Produtos em coluna única em telas pequenas */
+        margin: 10px auto;
+    }
+}
