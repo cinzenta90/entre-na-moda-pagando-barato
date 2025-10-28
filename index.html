@@ -1,55 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundo da Manga - Frescas e Deliciosas</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mangá Store</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Mundo da Manga</h1>
-        <p>As melhores mangas frescas direto do produtor para sua mesa!</p>
-    </header>
-
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">📚 Mangá Store</div>
     <nav>
-        <a href="#produtos">Produtos</a>
-        <a href="#contato">Contato</a>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Lançamentos</a></li>
+        <li><a href="#">Categorias</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <main id="produtos">
-        <h2>Nossas Variedades</h2>
+  <!-- Banner -->
+  <section class="banner">
+    <h1>Bem-vindo à Mangá Store!</h1>
+    <p>Os melhores mangás do Japão direto para você!</p>
+    <a href="#" class="btn">Ver Catálogo</a>
+  </section>
 
-        <section class="produto">
-            <img src="manga_palmer.jpg" alt="Manga Palmer">
-            <h3>Manga Palmer</h3>
-            <p>Polpa suculenta, pouco fiapo e sabor doce. Perfeita para comer pura.</p>
-            <p class="preco">R$ 8,90 / kg</p>
-            <button>Comprar</button>
-        </section>
+  <!-- Produtos -->
+  <section class="produtos">
+    <h2>Destaques</h2>
+    <div class="grade-produtos">
+      <div class="produto">
+        <img src="https://cdn.kobo.com/book-images/84b17d7d-14d9-4a60-934b-4b07bda6b285/1200/1200/False/naruto-vol-1.jpg" alt="Naruto Vol. 1">
+        <h3>Naruto Vol. 1</h3>
+        <p>R$ 29,90</p>
+        <button>Comprar</button>
+      </div>
 
-        <section class="produto">
-            <img src="manga_tommy.jpg" alt="Manga Tommy Atkins">
-            <h3>Manga Tommy Atkins</h3>
-            <p>Ideal para saladas e sucos. Fibra média e casca resistente.</p>
-            <p class="preco">R$ 6,50 / kg</p>
-            <button>Comprar</button>
-        </section>
+      <div class="produto">
+        <img src="https://m.media-amazon.com/images/I/81z7yYl5ZVL._AC_UF1000,1000_QL80_.jpg" alt="One Piece Vol. 1">
+        <h3>One Piece Vol. 1</h3>
+        <p>R$ 32,90</p>
+        <button>Comprar</button>
+      </div>
 
-        <section class="produto">
-            <img src="manga_rosa.jpg" alt="Manga Rosa">
-            <h3>Manga Rosa</h3>
-            <p>Clássica e aromática. Sabor inconfundível do nordeste brasileiro.</p>
-            <p class="preco">R$ 7,20 / kg</p>
-            <button>Comprar</button>
-        </section>
-    </main>
+      <div class="produto">
+        <img src="https://m.media-amazon.com/images/I/81tB8pZmBXL._AC_UF1000,1000_QL80_.jpg" alt="Attack on Titan Vol. 1">
+        <h3>Attack on Titan Vol. 1</h3>
+        <p>R$ 34,90</p>
+        <button>Comprar</button>
+      </div>
+    </div>
+  </section>
 
-    <footer id="contato">
-        <h3>Entre em Contato</h3>
-        <p>Telefone: (11) 98765-4321</p>
-        <p>Email: contato@mundodamanga.com.br</p>
-        <p>&copy; 2025 Mundo da Manga</p>
-    </footer>
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2025 Mangá Store — Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
