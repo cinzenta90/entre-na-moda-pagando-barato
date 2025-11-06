@@ -1,6 +1,9 @@
- /* ------------------------------------------------------------------- */
-/* ARQUIVO: style.css - Estilos para Mangá Prime */
-/* ------------------------------------------------------------------- */
+ /* PALETA DE CORES
+   - #0a7779: Verde-Água Escuro (Principal)
+   - #e33: Vermelho (Destaque/Promoção)
+   - #f8f8f8: Fundo Leve
+   - #333: Texto Principal
+*/
 
 /* ------------------------------------- */
 /* ESTILOS GERAIS */
@@ -11,6 +14,7 @@ body {
     padding: 0;
     background-color: #f8f8f8;
     color: #333;
+    line-height: 1.6;
 }
 a {
     text-decoration: none;
@@ -21,29 +25,25 @@ a {
     margin: auto;
     padding: 0 15px;
 }
-/* ÍCONES SIMULADOS */
-.icon::before {
-    content: "★ "; /* Usando um caractere simples para simular um ícone */
-    margin-right: 5px;
-}
 
 /* ------------------------------------- */
 /* HEADER - TOP BAR (Barra Superior) */
 /* ------------------------------------- */
 .top-bar {
-    background-color: #0a7779; /* Verde-Água Escuro */
+    background-color: #0a7779;
     color: white;
     font-size: 0.85em;
 }
 .top-bar .content {
     display: flex;
-    justify-content: flex-end; /* Alinha os links à direita */
+    justify-content: flex-end;
     padding: 8px 0;
 }
 .top-bar a {
     color: white;
     margin-left: 20px;
     opacity: 0.9;
+    transition: opacity 0.2s;
 }
 .top-bar a:hover {
     opacity: 1;
@@ -63,14 +63,15 @@ a {
     justify-content: space-between;
 }
 
+/* Logo */
 .logo h1 {
     color: #0a7779;
     font-size: 1.8em;
     font-weight: bold;
     margin: 0;
 }
-.logo span {
-    color: #e33; /* Destaque para "Mangá" */
+.logo .highlight {
+    color: #e33;
 }
 
 /* Busca */
@@ -111,6 +112,10 @@ a {
     font-size: 0.9em;
     display: inline-block;
 }
+.user-actions a i {
+    margin-right: 5px;
+    color: #0a7779; /* Cor do ícone */
+}
 .user-actions a:hover {
     color: #0a7779;
 }
@@ -131,9 +136,11 @@ a {
 }
 .category-nav ul li a {
     padding: 12px 15px;
-    display: block;
+    display: flex;
+    align-items: center;
     font-weight: bold;
     color: #555;
+    transition: color 0.2s, border-bottom 0.2s;
 }
 .category-nav ul li a:hover {
     color: #0a7779;
@@ -142,6 +149,14 @@ a {
 .category-nav .destaque {
     color: white;
     background-color: #e33;
+    border-bottom: none;
+}
+.category-nav .destaque:hover {
+    background-color: #c02222;
+    color: white;
+}
+.category-nav .destaque i {
+    color: white;
 }
 
 /* ------------------------------------- */
@@ -149,16 +164,20 @@ a {
 /* ------------------------------------- */
 .hero-banner {
     background-color: #222;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x200?text=BLACK+FRIDAY+MANGA');
+    background-size: cover;
     color: white;
     text-align: center;
     padding: 40px 20px;
     margin-top: 20px;
     border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .hero-banner h2 {
     font-size: 2.5em;
     margin-bottom: 10px;
     color: gold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 .hero-banner p {
     font-size: 1.2em;
@@ -171,6 +190,10 @@ a {
     margin-top: 15px;
     border-radius: 4px;
     font-weight: bold;
+    transition: background-color 0.2s;
+}
+.hero-banner a:hover {
+    background-color: #c02222;
 }
 
 /* ------------------------------------- */
@@ -185,27 +208,41 @@ a {
     border-bottom: 2px solid #0a7779;
     display: inline-block;
     padding-bottom: 5px;
+    font-weight: 600;
+    color: #222;
 }
 
 .product-scroller {
     display: flex;
-    overflow-x: auto; /* Permite a rolagem horizontal */
+    overflow-x: auto;
     gap: 15px;
     padding-bottom: 15px;
+    /* Estilo para simular as setas, que no projeto real seriam feitas com JS */
+    position: relative; 
+    padding: 10px 0;
 }
-/* Oculta a barra de rolagem em alguns navegadores */
-.product-scroller::-webkit-scrollbar { display: none; }
-.product-scroller { -ms-overflow-style: none; scrollbar-width: none; }
+/* Estilização para barras de rolagem (opcional) */
+.product-scroller::-webkit-scrollbar {
+    height: 8px;
+}
+.product-scroller::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+.product-scroller::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
 
 .product-card {
-    min-width: 180px; /* Largura fixa para cada card */
+    min-width: 180px;
     background: white;
     border: 1px solid #eee;
     border-radius: 5px;
     text-align: center;
     padding: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
 }
 .product-card:hover {
     transform: translateY(-3px);
@@ -213,7 +250,7 @@ a {
 }
 .product-card img {
     width: 100%;
-    height: 250px; /* Altura fixa para imagem do mangá */
+    height: 250px; 
     object-fit: cover;
     border-radius: 3px;
     margin-bottom: 10px;
@@ -221,8 +258,9 @@ a {
 .product-card h3 {
     font-size: 1em;
     margin: 5px 0;
-    height: 40px; /* Limita a altura para títulos longos */
+    height: 40px;
     overflow: hidden;
+    color: #333;
 }
 .product-card p {
     font-size: 0.9em;
@@ -245,4 +283,5 @@ footer {
     text-align: center;
     padding: 20px 0;
     margin-top: 40px;
+    font-size: 0.9em;
 }
