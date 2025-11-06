@@ -3,77 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MangáStore | Sua Loja de Mangás Online</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    <title>Mangá Prime - Sua Estante Virtual de Mangás</title>
+    <style>
+        /* ------------------------------------- */
+        /* ESTILOS GERAIS */
+        /* ------------------------------------- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 15px;
+        }
+        /* ÍCONES SIMULADOS */
+        .icon::before {
+            content: "★ "; /* Usando um caractere simples para simular um ícone */
+            margin-right: 5px;
+        }
+
+        /* ------------------------------------- */
+        /* HEADER - TOP BAR (Barra Superior) */
+        /* ------------------------------------- */
+        .top-bar {
+            background-color: #0a7779; /* Verde-Água Escuro */
+            color: white;
+            font-size: 0.85em;
+        }
+        .top-bar .content {
+            display: flex;
+            justify-content: flex-end; /* Alinha os links à direita */
+            padding: 8px 0;
+        }
+        .top-bar a {
+            color: white;
+            margin-left: 20px;
+            opacity: 0.9;
+        }
+        .top-bar a:hover {
+            opacity: 1;
+        }
+
+        /* ------------------------------------- */
+        /* HEADER - MAIN (Logo e Busca) */
+        /* ------------------------------------- */
+        .main-header {
+            background-color: white;
+            padding: 15px 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        .main-header .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo h1 {
+            color: #0a7779;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 0;
+        }
+        .logo span {
+            color: #e33; /* Destaque para "Manga" */
+        }
+
+        /* Busca */
+        .search-bar {
+            display: flex;
+            width: 50%;
+            border: 2px solid #0a7779;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .search-select {
+            padding: 10px;
+            border: none;
+            border-right: 1px solid #ccc;
+            background-color: #f0f0f0;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .search-input {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            font-size: 1em;
+        }
+        .search-button {
+            background-color: #0a7779;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        /* Ações do Usuário */
+        .user-actions a {
+            color: #333;
+            margin-left: 20px;
+            font-size: 0.9em;
+            display: inline-block;
+        }
+        .user-actions a:hover {
+            color: #0a7779;
+        }
+
+        /* ------------------------------------- */
+        /* CATEGORY NAV (Menu de Categorias) */
+        /* ------------------------------------- */
+        .category-nav {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .category-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .category-nav ul li a {
+            padding: 12px 15px;
+            display: block;
+            font-weight: bold;
+            color: #555;
+        }
+        .category-nav ul li a:hover {
+            color: #0a7779;
+            border-bottom: 2px solid #0a7779;
+        }
+        .category-nav .destaque {
+            color: white;
+            background-color: #e33;
+        }
+
+        /* ------------------------------------- */
+        /* BANNER (Destaque Principal) */
+        /* ------------------------------------- */
+        .hero-banner {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .hero-banner h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: gold;
+        }
+        .hero-banner p {
+            font-size: 1.2em;
+        }
+        .hero-banner a {
+            display: inline-block;
+            background-color: #e33;
+            color: white;
+            padding: 10px 30px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* ------------------------------------- */
+        /* SHOWCASE (Vitrine de Produtos) */
+        /* ------------------------------------- */
+        .showcase-section {
+            padding: 30px 0;
+        }
+        .showcase-section h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0a7779;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        
+        .product-scroller {
+            display: flex;
+            overflow-x: auto; /* Permite a rolagem horizontal */
+            gap: 15px;
+            padding-bottom: 15px;
+        }
+        /* Oculta a barra de rolagem em alguns navegadores */
+        .product-scroller::-webkit-scrollbar { display: none; }
+        .product-scroller { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .product-card {
+            min-width: 180px; /* Largura fixa para cada card */
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .product-card img {
+            width: 100%;
+            height: 250px; /* Altura fixa para imagem do mangá */
+            object-fit: cover;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        .product-card h3 {
+            font-size: 1em;
+            margin: 5px 0;
+            height: 40px; /* Limita a altura para títulos longos */
+            overflow: hidden;
+        }
+        .product-card p {
+            font-size: 0.9em;
+            color: #666;
+            margin: 0;
+        }
+        .product-card .price {
+            font-weight: bold;
+            color: #e33;
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+
+        /* ------------------------------------- */
+        /* FOOTER */
+        /* ------------------------------------- */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1>MangáStore</h1>
-            <nav>
-                <ul>
-                    <li><a href="#lancamentos">Lançamentos</a></li>
-                    <li><a href="#mais-vendidos">Mais Vendidos</a></li>
-                    <li><a href="#categorias">Categorias</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
+    <div class="top-bar">
+        <div class="container content">
+            <a href="#">Compre aqui mangás novos e usados</a>
+            <a href="#">Quero Vender</a>
+            <a href="#">Blog Mangá Prime</a>
+            <a href="#">Central de ajuda</a>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="container content">
+            
+            <div class="logo">
+                <h1>Mangá<span>Prime</span></h1>
+            </div>
+
+            <div class="search-bar">
+                <select class="search-select">
+                    <option>Título ou Autor</option>
+                    <option>Série</option>
+                    <option>Gênero</option>
+                </select>
+                <input type="text" class="search-input" placeholder="O que você está procurando?">
+                <button class="search-button">Buscar</button>
+            </div>
+
+            <div class="user-actions">
+                <a href="#" class="icon">Minhas listas</a>
+                <a href="#" class="icon">Carrinho</a>
+                <a href="#" class="icon">Olá, usuário</a>
+            </div>
+            
         </div>
     </header>
 
-    <main class="container">
-        <section id="banner">
-            <h2>Novidades Quentes!</h2>
-            <p>Descubra as últimas séries e garanta sua coleção!</p>
-            <a href="#lancamentos" class="btn">Ver Lançamentos</a>
-        </section>
-
-        <section id="lancamentos" class="product-grid">
-            <h2>✨ Lançamentos da Semana</h2>
-            <div class="product-card">
-                <div class="product-image"></div>
-                <h3>Nome da Série A Vol. 1</h3>
-                <p class="price">R$ 29,90</p>
-                <button class="btn">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product-card">
-                <div class="product-image"></div>
-                <h3>Nome da Série B Vol. 5</h3>
-                <p class="price">R$ 35,50</p>
-                <button class="btn">Adicionar ao Carrinho</button>
-            </div>
-            </section>
-
-        <section id="mais-vendidos" class="product-grid">
-            <h2>🏆 Mais Vendidos</h2>
-            <div class="product-card">
-                <div class="product-image"></div>
-                <h3>Clássico Mangá C Vol. 10</h3>
-                <p class="price">R$ 31,99</p>
-                <button class="btn">Adicionar ao Carrinho</button>
-            </div>
-            </section>
-
-        <section id="categorias">
-            <h2>Gêneros</h2>
-            <ul class="category-list">
-                <li>Shonen</li>
-                <li>Shojo</li>
-                <li>Seinen</li>
-                <li>Isekai</li>
-                <li>Esportes</li>
+    <nav class="category-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#" class="destaque">Ofertas Exclusivas</a></li>
+                <li><a href="#">Categorias</a></li>
+                <li><a href="#">Mangás Usados</a></li>
+                <li><a href="#">Pré-vendas</a></li>
+                <li><a href="#">Mais Vendidos</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Por Gênero</a></li>
             </ul>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container" id="contato">
-            <p>&copy; 2025 MangáStore. Todos os direitos reservados.</p>
-            <p>Siga-nos nas redes sociais: [Links aqui]</p>
         </div>
-    </footer>
+    </nav>
 
-</body>
-</html>
+    <div class="container">
+        <div class="hero-banner">
+            <h2>🔥 MEGA BLACK FRIDAY MANGÁ</h2>
+            <p>Corre e aproveite o cupom **MANGAPRIME20** em toda a loja!</p>
+            <a href="#">Ver Todas as Ofertas</a>
+        </div>
+        
+        <section class="showcase-section">
+            <h2>📈 Conheça os Mangás mais vendidos do Mês</h2>
+            
+            <div class="product-scroller">
+                
+                <div
+                
