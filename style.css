@@ -1,175 +1,248 @@
-  /* Reset básico */
-* {
+ /* ------------------------------------------------------------------- */
+/* ARQUIVO: style.css - Estilos para Mangá Prime */
+/* ------------------------------------------------------------------- */
+
+/* ------------------------------------- */
+/* ESTILOS GERAIS */
+/* ------------------------------------- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #f8f8f8;
     color: #333;
 }
-
+a {
+    text-decoration: none;
+    color: inherit;
+}
 .container {
-    width: 80%;
+    max-width: 1200px;
     margin: auto;
+    padding: 0 15px;
+}
+/* ÍCONES SIMULADOS */
+.icon::before {
+    content: "★ "; /* Usando um caractere simples para simular um ícone */
+    margin-right: 5px;
+}
+
+/* ------------------------------------- */
+/* HEADER - TOP BAR (Barra Superior) */
+/* ------------------------------------- */
+.top-bar {
+    background-color: #0a7779; /* Verde-Água Escuro */
+    color: white;
+    font-size: 0.85em;
+}
+.top-bar .content {
+    display: flex;
+    justify-content: flex-end; /* Alinha os links à direita */
+    padding: 8px 0;
+}
+.top-bar a {
+    color: white;
+    margin-left: 20px;
+    opacity: 0.9;
+}
+.top-bar a:hover {
+    opacity: 1;
+}
+
+/* ------------------------------------- */
+/* HEADER - MAIN (Logo e Busca) */
+/* ------------------------------------- */
+.main-header {
+    background-color: white;
+    padding: 15px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.main-header .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo h1 {
+    color: #0a7779;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 0;
+}
+.logo span {
+    color: #e33; /* Destaque para "Mangá" */
+}
+
+/* Busca */
+.search-bar {
+    display: flex;
+    width: 50%;
+    border: 2px solid #0a7779;
+    border-radius: 4px;
     overflow: hidden;
 }
-
-/* Header/Navegação */
-header {
-    background: #FF5722; /* Cor de destaque (Laranja/Vermelho) */
-    color: #fff;
-    padding: 1em 0;
-    border-bottom: 3px solid #E64A19;
+.search-select {
+    padding: 10px;
+    border: none;
+    border-right: 1px solid #ccc;
+    background-color: #f0f0f0;
+    font-size: 1em;
+    cursor: pointer;
 }
-
-header h1 {
-    float: left;
+.search-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    font-size: 1em;
 }
-
-header nav {
-    float: right;
-    margin-top: 10px;
-}
-
-header ul {
-    list-style: none;
-}
-
-header ul li {
-    display: inline;
-    margin-left: 20px;
-}
-
-header a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-header a:hover {
-    color: #ffe0b2; /* Laranja mais claro */
-}
-
-/* Botão Genérico */
-.btn {
-    display: inline-block;
-    background: #4CAF50; /* Cor verde para ação */
-    color: #fff;
-    padding: 10px 20px;
+.search-button {
+    background-color: #0a7779;
+    color: white;
+    padding: 10px 15px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
+    font-size: 1em;
 }
 
-.btn:hover {
-    background: #45a049;
+/* Ações do Usuário */
+.user-actions a {
+    color: #333;
+    margin-left: 20px;
+    font-size: 0.9em;
+    display: inline-block;
+}
+.user-actions a:hover {
+    color: #0a7779;
 }
 
-/* Seções Principais */
-main section {
-    padding: 20px 0;
-    margin-bottom: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* ------------------------------------- */
+/* CATEGORY NAV (Menu de Categorias) */
+/* ------------------------------------- */
+.category-nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
-
-main h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #FF5722;
-}
-
-/* Banner de Destaque */
-#banner {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 60px 0;
-    margin-top: 0; /* Remove margem superior padrão de section */
-    border-radius: 0;
-    box-shadow: none;
-}
-
-#banner p {
-    margin: 10px 0 20px;
-}
-
-/* Grade de Produtos */
-.product-grid {
+.category-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
 }
+.category-nav ul li a {
+    padding: 12px 15px;
+    display: block;
+    font-weight: bold;
+    color: #555;
+}
+.category-nav ul li a:hover {
+    color: #0a7779;
+    border-bottom: 2px solid #0a7779;
+}
+.category-nav .destaque {
+    color: white;
+    background-color: #e33;
+}
+
+/* ------------------------------------- */
+/* BANNER (Destaque Principal) */
+/* ------------------------------------- */
+.hero-banner {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.hero-banner h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: gold;
+}
+.hero-banner p {
+    font-size: 1.2em;
+}
+.hero-banner a {
+    display: inline-block;
+    background-color: #e33;
+    color: white;
+    padding: 10px 30px;
+    margin-top: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* ------------------------------------- */
+/* SHOWCASE (Vitrine de Produtos) */
+/* ------------------------------------- */
+.showcase-section {
+    padding: 30px 0;
+}
+.showcase-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #0a7779;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.product-scroller {
+    display: flex;
+    overflow-x: auto; /* Permite a rolagem horizontal */
+    gap: 15px;
+    padding-bottom: 15px;
+}
+/* Oculta a barra de rolagem em alguns navegadores */
+.product-scroller::-webkit-scrollbar { display: none; }
+.product-scroller { -ms-overflow-style: none; scrollbar-width: none; }
 
 .product-card {
-    width: 30%;
-    text-align: center;
-    margin: 10px;
-    padding: 15px;
-    border: 1px solid #ddd;
+    min-width: 180px; /* Largura fixa para cada card */
+    background: white;
+    border: 1px solid #eee;
     border-radius: 5px;
-    background: #fff;
-}
-
-.product-image {
-    background: #eee;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-    border-radius: 4px;
-}
-
-.product-card h3 {
-    margin: 10px 0;
-    font-size: 1.1em;
-}
-
-.price {
-    color: #E64A19;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-/* Lista de Categorias */
-.category-list {
-    list-style: none;
     text-align: center;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.product-card img {
+    width: 100%;
+    height: 250px; /* Altura fixa para imagem do mangá */
+    object-fit: cover;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+.product-card h3 {
+    font-size: 1em;
+    margin: 5px 0;
+    height: 40px; /* Limita a altura para títulos longos */
+    overflow: hidden;
+}
+.product-card p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+}
+.product-card .price {
+    font-weight: bold;
+    color: #e33;
+    font-size: 1.1em;
+    margin-top: 5px;
 }
 
-.category-list li {
-    display: inline-block;
-    background: #ddd;
-    padding: 10px 15px;
-    margin: 5px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.category-list li:hover {
-    background: #ccc;
-}
-
-/* Footer */
+/* ------------------------------------- */
+/* FOOTER */
+/* ------------------------------------- */
 footer {
-    background: #333;
-    color: #fff;
+    background-color: #333;
+    color: white;
     text-align: center;
     padding: 20px 0;
-    margin-top: 20px;
-}
-
-footer p {
-    margin: 5px 0;
+    margin-top: 40px;
 }
