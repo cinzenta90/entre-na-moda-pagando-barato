@@ -1,62 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mangá Store</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MangáStore | Sua Loja de Mangás Online</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
 </head>
 <body>
-  <!-- Cabeçalho -->
-  <header>
-    <div class="logo">📚 Mangá Store</div>
-    <nav>
-      <ul>
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Lançamentos</a></li>
-        <li><a href="#">Categorias</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Banner -->
-  <section class="banner">
-    <h1>Bem-vindo à Mangá Store!</h1>
-    <p>Os melhores mangás do Japão direto para você!</p>
-    <a href="#" class="btn">Ver Catálogo</a>
-  </section>
+    <header>
+        <div class="container">
+            <h1>MangáStore</h1>
+            <nav>
+                <ul>
+                    <li><a href="#lancamentos">Lançamentos</a></li>
+                    <li><a href="#mais-vendidos">Mais Vendidos</a></li>
+                    <li><a href="#categorias">Categorias</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Produtos -->
-  <section class="produtos">
-    <h2>Destaques</h2>
-    <div class="grade-produtos">
-      <div class="produto">
-        <img src="91RpwagB7uL.jpg" alt="Naruto Vol. 1">
-        <h3>Naruto Vol. 1</h3>
-        <p>R$ 29,90</p>
-        <button>Comprar</button>
-      </div>
+    <main class="container">
+        <section id="banner">
+            <h2>Novidades Quentes!</h2>
+            <p>Descubra as últimas séries e garanta sua coleção!</p>
+            <a href="#lancamentos" class="btn">Ver Lançamentos</a>
+        </section>
 
-      <div class="produto">
-        <img src="https://m.media-amazon.com/images/I/81z7yYl5ZVL._AC_UF1000,1000_QL80_.jpg" alt="One Piece Vol. 1">
-        <h3>One Piece Vol. 1</h3>
-        <p>R$ 32,90</p>
-        <button>Comprar</button>
-      </div>
+        <section id="lancamentos" class="product-grid">
+            <h2>✨ Lançamentos da Semana</h2>
+            <div class="product-card">
+                <div class="product-image"></div>
+                <h3>Nome da Série A Vol. 1</h3>
+                <p class="price">R$ 29,90</p>
+                <button class="btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product-card">
+                <div class="product-image"></div>
+                <h3>Nome da Série B Vol. 5</h3>
+                <p class="price">R$ 35,50</p>
+                <button class="btn">Adicionar ao Carrinho</button>
+            </div>
+            </section>
 
-      <div class="produto">
-        <img src="https://m.media-amazon.com/images/I/81tB8pZmBXL._AC_UF1000,1000_QL80_.jpg" alt="Attack on Titan Vol. 1">
-        <h3>Attack on Titan Vol. 1</h3>
-        <p>R$ 34,90</p>
-        <button>Comprar</button>
-      </div>
-    </div>
-  </section>
+        <section id="mais-vendidos" class="product-grid">
+            <h2>🏆 Mais Vendidos</h2>
+            <div class="product-card">
+                <div class="product-image"></div>
+                <h3>Clássico Mangá C Vol. 10</h3>
+                <p class="price">R$ 31,99</p>
+                <button class="btn">Adicionar ao Carrinho</button>
+            </div>
+            </section>
 
-  <!-- Rodapé -->
-  <footer>
-    <p>© 2025 Mangá Store — Todos os direitos reservados.</p>
-  </footer>
+        <section id="categorias">
+            <h2>Gêneros</h2>
+            <ul class="category-list">
+                <li>Shonen</li>
+                <li>Shojo</li>
+                <li>Seinen</li>
+                <li>Isekai</li>
+                <li>Esportes</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" id="contato">
+            <p>&copy; 2025 MangáStore. Todos os direitos reservados.</p>
+            <p>Siga-nos nas redes sociais: [Links aqui]</p>
+        </div>
+    </footer>
+
 </body>
 </html>
