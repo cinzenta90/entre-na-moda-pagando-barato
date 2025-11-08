@@ -1,112 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mangá Prime - Sua Estante Virtual de Mangás</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MangáStore - Início</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  <header>
     <div class="top-bar">
-        <div class="container content">
-            <a href="#">Compre aqui mangás novos e usados</a>
-            <a href="#">Quero Vender</a>
-            <a href="#">Blog Mangá Prime</a>
-            <a href="#">Central de ajuda</a>
-        </div>
+      <h1>MangáStore</h1>
+      <div class="search-bar">
+        <input type="text" placeholder="Procure por título ou autor...">
+        <button>🔍</button>
+      </div>
+      <div class="user-links">
+        <a href="#">Login</a>
+        <a href="#">Carrinho 🛒</a>
+      </div>
     </div>
 
-    <header class="main-header">
-        <div class="container content">
-            
-            <div class="logo">
-                <h1>Mangá<span class="highlight">Prime</span></h1>
-            </div>
-
-            <div class="search-bar">
-                <select class="search-select">
-                    <option>Título ou Autor</option>
-                    <option>Série</option>
-                    <option>Gênero</option>
-                </select>
-                <input type="text" class="search-input" placeholder="O que você está procurando?">
-                <button class="search-button"><i class="fas fa-search"></i></button>
-            </div>
-
-            <div class="user-actions">
-                <a href="#"><i class="fas fa-list"></i> Minhas listas</a>
-                <a href="#"><i class="fas fa-shopping-cart"></i> Carrinho</a>
-                <a href="#"><i class="fas fa-user-circle"></i> Olá, usuário</a>
-            </div>
-            
-        </div>
-    </header>
-
-    <nav class="category-nav">
-        <div class="container">
-            <ul>
-                <li><a href="#" class="destaque"><i class="fas fa-tag"></i> Ofertas Exclusivas</a></li>
-                <li><a href="#">Categorias</a></li>
-                <li><a href="#">Mangás Usados</a></li>
-                <li><a href="#">Pré-vendas</a></li>
-                <li><a href="#">Mais Vendidos</a></li>
-                <li><a href="#">Reviews</a></li>
-                <li><a href="#">Por Gênero</a></li>
-            </ul>
-        </div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Início</a></li>
+        <li><a href="populares.html">Mangás Populares</a></li>
+        <li><a href="categorias.html">Categorias</a></li>
+        <li><a href="promocoes.html">Promoções</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <div class="container">
-        <div class="hero-banner">
-            <h2>🔥 MEGA BLACK FRIDAY MANGÁ</h2>
-            <p>Corre e aproveite o cupom <strong>MANGAPRIME20</strong> em toda a loja!</p>
-            <a href="#">Ver Todas as Ofertas</a>
-        </div>
-        
-        <section class="showcase-section">
-            <h2>📈 Conheça os Mangás mais vendidos do Mês</h2>
-            
-            <div class="product-scroller">
-                
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/180x250?text=One+Piece+Vol+1" alt="Capa One Piece Vol. 1">
-                    <h3>One Piece - Vol. 1</h3>
-                    <p>Eiichiro Oda</p>
-                    <div class="price">R$ 34,90</div>
-                </div>
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/180x250?text=Attack+on+Titan+Vol+1" alt="Capa Attack on Titan Vol. 1">
-                    <h3>Attack on Titan - Vol. 1</h3>
-                    <p>Hajime Isayama</p>
-                    <div class="price">R$ 39,90</div>
-                </div>
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/180x250?text=Jujutsu+Kaisen+Vol+1" alt="Capa Jujutsu Kaisen Vol. 1">
-                    <h3>Jujutsu Kaisen - Vol. 1</h3>
-                    <p>Gege Akutami</p>
-                    <div class="price">R$ 32,90</div>
-                </div>
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/180x250?text=Demon+Slayer+Vol+1" alt="Capa Demon Slayer Vol. 1">
-                    <h3>Demon Slayer - Vol. 1</h3>
-                    <p>Koyoharu Gotouge</p>
-                    <div class="price">R$ 29,90</div>
-                </div>
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/180x250?text=Death+Note+Black+Ed" alt="Capa Death Note Black Edition">
-                    <h3>Death Note Black Edition</h3>
-                    <p>Tsugumi Ohba</p>
-                    <div class="price">R$ 65,00</div>
-                </div>
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/180x250?text=My+Hero+Academia+Vol+1" alt="Capa My Hero Academia Vol. 1">
-                    <h3>My Hero Academia - Vol. 1</h3>
-                    <p>Kohei Horikoshi</p>
-                    <div class="price">R$ 34,90</div>
-                </div>
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/180x250?text=Fullmetal+Alchemist+Vol+1" alt="Capa Fullmetal Alchemist Vol. 1">
-                    <h3>Fullmetal Alchemist - Vol. 1</h3>
-                    <p>Hiromu Arakawa</p>
+  <section class="banner">
+    <h2>🔥 Black Friday MangáStore 🔥</h2>
+    <p>Aproveite descontos de até <strong>70%</strong> nos seus títulos favoritos!</p>
+    <button onclick="window.location.href='promocoes.html'">Ver Ofertas</button>
+  </section>
+
+  <main>
+    <h2>Mangás mais vendidos</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="https://m.media-amazon.com/images/I/81p+xe8cbnL.jpg" alt="One Piece">
+        <h3>One Piece</h3>
+        <p>Eiichiro Oda</p>
+        <span>R$ 29,90</span>
+      </div>
+
+      <div class="product">
+        <img src="https://m.media-amazon.com/images/I/81aA7hEEykL.jpg" alt="Naruto">
+        <h3>Naruto</h3>
+        <p>Masashi Kishimoto</p>
+        <span>R$ 25,90</span>
+      </div>
+
+      <div class="product">
+        <img src="https://m.media-amazon.com/images/I/81t9xVFevXL.jpg" alt="Attack on Titan">
+        <h3>Attack on Titan</h3>
+        <p>Hajime Isayama</p>
+        <span>R$ 32,90</span>
+      </div>
+
+      <div class="product">
+        <img src="https://m.media-amazon.com/images/I/81VStYnDGrL.jpg" alt="Demon Slayer">
+        <h3>Demon Slayer</h3>
+        <p>Koyoharu Gotouge</p>
+        <span>R$ 28,90</span>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 MangáStore - Todos os direitos reservados</p>
+  </footer>
+
+   
+  <script src="script.js"></script>
+</body>
+</html>
