@@ -187,3 +187,57 @@ footer {
 .contact-form button:hover {
   background-color: #163a5f;
 }
+
+/* ----- MODO ESCURO ----- */
+body.dark {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark header {
+  background-color: #0d1f33;
+}
+
+body.dark nav {
+  background-color: #0a1726;
+}
+
+body.dark nav ul li a {
+  color: #f1f1f1;
+}
+
+body.dark nav ul li a:hover {
+  background-color: #132c47;
+}
+
+body.dark .product {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .banner {
+  background: linear-gradient(90deg, #333, #222);
+}
+
+body.dark .banner button {
+  background: #f1f1f1;
+  color: #222;
+}
+
+body.dark footer {
+  background-color: #0d1f33;
+}
+
+#dark-mode-toggle {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: transform 0.3s;
+}
+
+#dark-mode-toggle:hover {
+  transform: scale(1.2);
+}

@@ -40,3 +40,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// ====== MODO ESCURO ======
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("dark-mode-toggle");
+
+  // Carrega preferência do usuário
+  const darkModeAtivo = localStorage.getItem("darkMode") === "true";
+  if (darkModeAtivo) {
+    document.body.classList.add("dark");
+    if (toggleBtn) toggleBtn.textContent = "☀️";
+  }
+
+  // Alterna modo
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const ativo = document.body.classList.contains("dark");
+      localStorage.setItem("darkMode", ativo);
+      toggleBtn.textContent = ativo ? "☀️" : "🌙";
+    });
+  }
+});
