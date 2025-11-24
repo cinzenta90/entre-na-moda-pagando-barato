@@ -34,14 +34,20 @@
 
   <main>
     <h2>Categorias</h2>
-    <ul class="category-list">
-      <li>Shonen</li>
-      <li>Seinen</li>
-      <li>Shoujo</li>
-      <li>Josei</li>
-      <li>Isekai</li>
-      <li>Fantasia</li>
+    <ul class="category-list" id="category-filter-list">
+      <li data-category="all" class="active-category">Todos</li>
+      <li data-category="shonen">Shonen</li>
+      <li data-category="seinen">Seinen</li>
+      <li data-category="shoujo">Shoujo</li>
+      <li data-category="josei">Josei</li>
+      <li data-category="isekai">Isekai</li>
+      <li data-category="fantasia">Fantasia</li>
     </ul>
+
+    <h2 id="category-title">Todos os Mangás</h2>
+
+    <div class="product-grid" id="filtered-products-grid">
+      </div>
   </main>
 
   <footer>

@@ -101,7 +101,7 @@ if (categoryList) {
 
  
     });
-}
+
   function realizarBusca() {
     const termo = searchInput.value.trim().toLowerCase();
     const produtos = document.querySelectorAll(".product");
@@ -165,4 +165,4 @@ if (categoryList) {
       toggleBtn.textContent = ativo ? "☀️" : "🌙";
     });
   }
-});
+;
