@@ -117,8 +117,12 @@ main h2 {
 .product img {
     width: 100%;
     height: 260px;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 6px;
+}    @media (max-width: 600px) {
+    .product img {
+        height: 200px;
+    }
 }
 
 .product h3 {

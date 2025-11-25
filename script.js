@@ -23,7 +23,7 @@ const allMangas = [
 ];
 
 
-// ====== LÓGICA DE FILTRAGEM DE CATEGORIAS ======
+// ======  FILTRAGEM DE CATEGORIAS ======
 const categoryList = document.getElementById("category-filter-list");
 const productGrid = document.getElementById("filtered-products-grid");
 const categoryTitle = document.getElementById("category-title");
@@ -89,7 +89,7 @@ if (categoryList) {
         }
     });
     
-    // Exibe todos os produtos ao carregar a página pela primeira vez
+    
     filterAndDisplay('all');
 }
 
@@ -100,7 +100,7 @@ if (categoryList) {
     const termo = searchInput.value.trim().toLowerCase();
     const produtos = document.querySelectorAll(".product");
 
-    if (!produtos.length) return; // caso a página não tenha produtos
+    if (!produtos.length) return;  
 
     // Se o campo estiver vazio, mostra tudo novamente
     if (termo === "") {
