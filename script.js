@@ -4,12 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchButton = document.querySelector(".search-bar button");
 
 
-  // script.js
-
-// ... (Parte de PESQUISA DE MANGÁS e MODO ESCURO) ...
-
-// ====== DADOS DE PRODUTOS PARA DEMONSTRAÇÃO ======
-// Adicione um campo 'category' para cada mangá.
 const allMangas = [
   // Populares / Shonen / Fantasia
   { title: "One Piece 3 em 1 Vol.33", author: "Eiichiro Oda", price: "R$ 70,40", image: "one.jpg", category: "shonen" },
@@ -17,15 +11,15 @@ const allMangas = [
   { title: "Attack on Titan Vol.32", author: "Hajime Isayama", price: "R$ 32,90", image: "ATTACH.webp", category: "shonen" },
   { title: "Demon Slayer Vol.23", author: "Koyoharu Gotouge", price: "R$ 28,90", image: "demon 2.webp", category: "shonen" },
   { title: "Blue Lock Vol.16", author: "Muneyuki Kaneshiro", price: "R$ 37,90", image: "blue lock.jfif", category: "shonen" },
-  // Exemplo de Seinen
+  // Seinen
   { title: "Kingdom Vol.3", author: "Yasuhisa Hara", price: "R$ 28,90", image: "kingdom.webp", category: "seinen" },
   { title: "Sakamoto Days Vol.9", author: "Yuto Suzuki", price: "R$ 32,92", image: "Sakamoto Days.jpg", category: "shonen" },
-  // Exemplo de Isekai/Fantasia
+  // Isekai/Fantasia
   { title: "The Apothecary Diaries Vol.15", author: "Natsu Hyūga", price: "R$ 33,90", image: "diaries vol 15", category: "fantasia" },
   // Outros...
   { title: "Bleach vol. 1", author: "Tite Kubo", price: "R$ 24,90", oldPrice: "R$ 35,90", image: "blech.webp", category: "shonen" },
   { title: "Death Note Vol. 1", author: "Tsugumi Ohba", price: "R$ 27,90", oldPrice: "R$ 40,00", image: "death note.jpg", category: "shonen" },
-  { title: "Spy × Family Vol.1", author: "Tatsuya Endo", price: "R$ 21,90", oldPrice: "R$ 31,90", category: "shonen" }
+  { title: "Spy × Family Vol.1", author: "Tatsuya Endo", price: "R$ 21,90", oldPrice: "R$ 31,90", Image: "spy.jfif", category: "shonen" }
 ];
 
 
