@@ -115,21 +115,23 @@ main h2 {
 }
 
 .product img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 6px;
+width: 100%;
+height: 260px;
+object-fit: cover;
+border-radius: 6px;
 }    @media (max-width: 600px) {
     .product img {
         height: 200px;
     }
 }
 body.page-populares .product img {
-    repeat(auto-fit, minmax(250px, 1fr));
- }
-
+width: 100%;
+height: 260px;
+object-fit: cover;
+border-radius: 6px;
 .product h3 {
     margin: 10px 0 5px;
+   }
 }
 
 .product span {
